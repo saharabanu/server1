@@ -38,25 +38,8 @@ router.patch("/update/:id", (req, res) => {
 router.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
   const product = db.deleteProduct(id);
-  if (!id) {
-    const product = this.data.filter((item) => item.id !== id);
-    return product;
-  }
-
-  // if (!product) {
-  //   return res.status(400).json(product);
-  // }
 
   res.status(201).json(product);
-  // if (product) {
-  //   console.log(product);
-  //   let deletep = deletep.filter((item) => item.id !== id);
-  //   console.log(product);
-  //   res.status(201).json(product);
-  // } else {
-  //   res.status(404).json({ message: "something is wrong" });
-  // }
-  // console.log(product);
 });
 
 module.exports = router;

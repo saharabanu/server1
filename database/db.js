@@ -46,8 +46,8 @@ class ProductDB {
   // delete product
   deleteProduct(id) {
     const product = this.data.find((item) => item.id == id);
-
-    return product;
+    this.data.splice(product, 1);
+    return this.data;
   }
 }
 
